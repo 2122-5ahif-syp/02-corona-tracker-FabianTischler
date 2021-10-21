@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.time.Instant;
 
 @Entity
 public class Person {
@@ -14,15 +15,17 @@ public class Person {
     private String lastName;
     private String email;
     private String phone;
+    private Instant timestamp;
 
     public Person() {
     }
 
-    public Person(String firstName, String lastName, String email, String phone) {
+    public Person(String firstName, String lastName, String email, String phone, Instant instant) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phone = phone;
+        this.timestamp = instant;
     }
 
     public String getFirstName() {
@@ -59,5 +62,13 @@ public class Person {
 
     public Long getPersonId() {
         return personId;
+    }
+
+    public Instant getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Instant timestamp) {
+        this.timestamp = timestamp;
     }
 }
