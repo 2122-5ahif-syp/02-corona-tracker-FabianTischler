@@ -1,0 +1,9 @@
+POST http://localhost:8080/person/add
+Content-Type:application/json
+
+{
+  "firstName": "Fabian",
+  "lastName": "Tischler",
+  "email": "fabian.tischler@gmail.com",
+  "telephoneNo": "066446439"
+}

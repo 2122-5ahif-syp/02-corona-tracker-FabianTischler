@@ -1,26 +1,28 @@
 package at.htl.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Person {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long personId;
     private String firstName;
     private String lastName;
     private String email;
-    private String telephoneNo;
+    private String phone;
 
     public Person() {
     }
 
-    public Person(Long personId, String firstName, String lastName, String email, String telephoneNo) {
-        this.personId = personId;
+    public Person(String firstName, String lastName, String email, String phone) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.telephoneNo = telephoneNo;
+        this.phone = phone;
     }
 
     public String getFirstName() {
@@ -47,11 +49,15 @@ public class Person {
         this.email = email;
     }
 
-    public String getTelephoneNo() {
-        return telephoneNo;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setTelephoneNo(String telephoneNo) {
-        this.telephoneNo = telephoneNo;
+    public void setPhone(String telephoneNo) {
+        this.phone = telephoneNo;
+    }
+
+    public Long getPersonId() {
+        return personId;
     }
 }
